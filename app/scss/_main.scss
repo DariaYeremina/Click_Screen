@@ -1,0 +1,431 @@
+// bootstrap
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+  }
+  
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+
+  @media (min-width: 1360px) {
+    .container {
+      max-width: 1300px;
+    }
+  }
+  
+  .container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+  }
+  
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  
+  .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+//   Main styles
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: $text;
+    background-image: url(../img/hexagon_60.png);
+    background-repeat: repeat;
+    overflow: hidden;;
+}
+
+.main-screen{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.scroll-flag{
+    width: 100%;
+    height: 300vh;
+}
+
+.screen{
+    position: relative;
+    height: 100vh;
+    &_tooltips{
+        display: flex;
+        // display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.background{
+    width: 57%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.triangle{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url(../img/back_layout.svg);
+    background-size: 100% 100%;
+    filter: drop-shadow(-3px 3px 6px rgba(0,0,0,0.35));
+}
+
+.container-screen_bg{
+    height: 100%;
+}
+
+  .row-flex-around{
+      height: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+  }
+
+  .header{
+      width: 100%;
+      height: 33vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 50;
+      position: relative;
+  }
+
+.logo{
+    font-family: 'Mukta Vaani', sans-serif;
+    width: 21%;
+    position: absolute;
+    top: 7vh;
+    &__pic{
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(-3px 3px 2px rgba(0,0,0,0.24));
+    }
+    &__text{
+        position: absolute;
+        top: 27%;
+        left: 0%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        color: #fff;
+        font-size: 46px;
+        // font-size: calc(0.5rem + 4.7vh);
+        text-shadow: 0 2px 4px #00000052;
+        text-transform: uppercase;
+        &_bold{
+            display: block;
+            font-weight: 800;
+            font-size: 40px;
+            // font-size: calc(0.5rem + 3.9vh);
+        }
+    }
+}
+
+.title{
+    position: absolute;
+    top: 12vh;
+    right: 20%;
+    width: 70%;
+    text-align: right;
+    color: #fff;
+    font-size: 30px;
+    line-height: 1.5;
+    font-weight: 300;
+    & span{
+        display: block;
+    }
+}
+
+.app-screen{
+    width: 100%;
+    height: 33vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__pic{
+        height: auto;
+        width: 61%;
+        display: inline-block;
+        margin-left: 6%;
+        box-shadow: -3px 3px 6px rgba(0,0,0,0.16), -3px 3px 6px rgba(0,0,0,0.23);
+    }
+}
+
+.button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    letter-spacing: 1px;
+    padding: 18px 55px 18px 94px;
+    color: #fff;
+    background-color: $button_blue;
+    border-radius: 30px;
+    font-size: 25px;
+    font-family: 'Mukta Vaani', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 17%;
+    right: 46%;
+    box-shadow: -3px 3px 6px rgba(0,0,0,0.16), -3px 3px 6px rgba(0,0,0,0.23);
+    z-index: 20;
+    &__wrap{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        z-index: 10;
+        position: relative;
+    }
+    & svg{
+        width: 24px;
+        margin-right: 15px;
+        position: absolute;
+        left: 52px;
+    }
+}
+
+.screenshot{
+    position: relative;
+    width: 750px;
+    z-index: -1;
+    &_pic{
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        box-shadow: -3px 3px 6px rgba(0,0,0,0.16), -3px 3px 6px rgba(0,0,0,0.23);
+    }
+    &__btn{
+        width: 6%;
+        height: 46%;
+        opacity: 0;
+        position: absolute;
+        bottom: 11px;
+        & .round-number{
+            position: absolute;
+        }
+        &_1{
+            left: 15px;
+            & .round-number{
+                bottom: -6px;
+                left: -6px;
+            }
+        }
+        &_2{
+            left: 101px;
+            & .round-number{
+                top: -6px;
+                left: -6px;
+            }
+        }
+        &_3{
+            left: 164px;
+            & .round-number{
+                top: -6px;
+                right: -6px;
+            }
+        }
+        &_4{
+            left: 269px;
+            & .round-number{
+                top: -6px;
+                left: -6px;
+            }
+        }
+        &_5{
+            left: 332px;
+            & .round-number{
+                bottom: -6px;
+                left: -6px;
+            }
+        }
+        &_6{
+            left: 395px;
+            & .round-number{
+                top: -6px;
+                right: -6px;
+            }
+        }
+        &_7{
+            left: 458px;
+            & .round-number{
+                bottom: -6px;
+                left: -6px;
+            }
+        }
+        &_8{
+            left: 562px;
+            & .round-number{
+                bottom: -6px;
+                right: -6px;
+            }
+        }
+        &_9{
+            left: 625px;
+            & .round-number{
+                top: -6px;
+                right: -6px;
+            }
+        }
+        &_10{
+            left: 689px;
+            & .round-number{
+                bottom: -6px;
+                left: -6px;
+            }
+        }
+    }
+}
+
+.tooltips{
+    width: 100%;
+    max-width: 1550px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    opacity: 0;
+    &_bottom{
+        top: auto;
+        bottom: 0;
+    }
+    &__line{
+        display: block;
+        position: absolute;
+        top: 95%;
+        right: 50%;
+        width: 1px;
+        border-right: 2px solid $blue_gradient;
+        z-index: -1;
+        transform-origin: 50% 0;
+    }
+    &__item{
+        height: auto;
+        max-height: 100%;
+        padding: 5px 10px;
+        position: relative;
+        z-index: 90;
+        width: 20%;
+        &_1{
+            align-self: center;
+        }
+        &_2{
+            align-self: center;
+        }
+        &_3{
+            align-self: flex-end;
+            margin-bottom: 6vh;
+        }
+        &_4{
+            align-self: center;
+            margin-top: 2vh;
+        }
+        &_5{
+            align-self: center;
+            margin-top: 6vh;
+        }
+        &_6{
+            align-self: center;
+        }
+        &_7{
+            align-self: flex-start;
+            margin-top: 8vh;
+        }
+        &_8{
+            align-self: center;
+        }
+        &_9{
+            align-self: flex-end;
+            margin-bottom: 7vh;
+        }
+        &_10{
+            align-self: flex-start;
+            margin-top: 8vh;
+        }
+        &_bottom{
+            & .tooltips__line{
+                top: 5%;
+            }
+        }
+    }
+    &__content{
+        border: 2px solid $blue_gradient;
+        background-color: #fff;
+        padding: 10px;
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: flex-start;
+        z-index: 10000;
+        box-shadow: -3px 3px 2px rgba(0, 0, 0, 0.24);
+    }
+}
+
+.round-number{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #5876b8;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Mukta Vaani', sans-serif;
+    font-size: 15px;
+    box-shadow: -3px 3px 6px rgba(0,0,0,0.16), -3px 3px 6px rgba(0,0,0,0.23);
+    flex-shrink: 0;
+    margin-right: 10px;
+}

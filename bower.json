@@ -1,0 +1,19 @@
+{
+  "name": "clickScreen",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Daria Yeromina <dariaeremina12@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+  }
+}

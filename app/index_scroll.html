@@ -1,0 +1,97 @@
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<style>
+		body {
+			overflow: hidden;
+		}
+		.mainDiv {
+			width: 100%;
+			height: 100vh;
+			max-height: 100vh;
+			position: relative;
+		}
+		#content {
+			background: lightgray;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		#scroll {
+			position: absolute;
+			max-height: 100vh;
+			width: 100%;
+			overflow: auto;
+		}
+		.inner {
+			background: transparent;
+			width: 100vh;
+			height: 200vh;
+		}
+		img.app {
+			padding-top: 200px;
+			padding-left: 300px;
+		}
+		img.logo {
+			padding-top: 140px;
+			padding-left: 80px;
+			position: absolute;
+		}
+		img.sideimage {
+			padding-top: 320px;
+			padding-left: 300px;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	var viewportHeight = $(window).height();
+
+	var scrollOffset = viewportHeight * 0.4; // 20% of the view port height
+	var startPoint = viewportHeight - scrollOffset;
+
+	var fromTopToBottom = false;
+	var prevPosition = 0;
+
+	var text = $("#text");
+	text.css('opacity', '0.0');
+
+	var app = $(".app");
+
+	var logo = $(".logo");
+	var sideImage = $(".sideimage");
+
+	var scroll = $("#scroll");
+	scroll.scroll(function() {
+		var currPosition = scroll.scrollTop();
+		fromTopToBottom = currPosition > prevPosition;
+
+		logo.css('margin-top', '-' + currPosition + 'px');
+		sideImage.css('margin-left', currPosition + 'px');
+
+		
+		var currOpacity = 1 - (startPoint - (currPosition - scrollOffset)) / startPoint;
+		text.css('opacity', currOpacity);
+		app.css('margin-left', (currPosition / 40) + 'px');
+
+		prevPosition = currPosition;
+	});
+
+});
+</script>
+<div class="mainDiv">
+<div id="content">
+	<span id="text"><b> &nbsp;&nbsp;&nbsp; Some text</b></span>
+	<img class="app" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-film-marker-128.png"/>
+	<img class="logo" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-search-64.png"/>
+	<img class="sideimage" src="https://cdn3.iconfinder.com/data/icons/popsicles-v2/1250/popsicle-stick-icecream-ice-cream-dessert-3-64.png"/>
+</div>
+<div id="scroll">
+	<div class="inner"></div>
+</div>
+</div>
+</body>
