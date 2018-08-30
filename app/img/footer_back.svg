@@ -1,0 +1,33 @@
+<svg width="266" height="170" xmlns="http://www.w3.org/2000/svg" style="vector-effect: non-scaling-stroke;" stroke="null">
+ <metadata style="vector-effect: non-scaling-stroke;" stroke="null" id="metadata8">image/svg+xml</metadata>
+ <defs style="vector-effect: non-scaling-stroke;" stroke="null">
+  <clipPath style="vector-effect: non-scaling-stroke;" stroke="null" id="clipPath22" clipPathUnits="userSpaceOnUse">
+   <path style="vector-effect: non-scaling-stroke;" stroke="null" id="path20" d="m131.402,3009.46l2635.2,0l0,121.543l-2635.2,0l0,-121.543z"/>
+  </clipPath>
+  <clipPath style="vector-effect: non-scaling-stroke;" stroke="null" id="clipPath34" clipPathUnits="userSpaceOnUse">
+   <path style="vector-effect: non-scaling-stroke;" stroke="null" id="path32" d="m131.402,1321.66l0,0l0,1687.8l2635.198,0l0,-1199.86l-2635.198,0l0,-487.94"/>
+  </clipPath>
+  <clipPath style="vector-effect: non-scaling-stroke;" stroke="null" id="clipPath46" clipPathUnits="userSpaceOnUse">
+   <path style="vector-effect: non-scaling-stroke;" stroke="null" id="path44" d="m1934.1,892.5l-2635.198,0l0,129.461l2635.198,0l0,-129.461"/>
+  </clipPath>
+  <clipPath style="vector-effect: non-scaling-stroke;" stroke="null" id="clipPath58" clipPathUnits="userSpaceOnUse">
+   <path style="vector-effect: non-scaling-stroke;" stroke="null" id="path56" d="m2766.6,129.461l-2635.198,0l0,1192.199l2635.198,0l0,487.94l0,-1680.139"/>
+  </clipPath>
+  <clipPath style="vector-effect: non-scaling-stroke;" stroke="null" id="clipPath70" clipPathUnits="userSpaceOnUse">
+   <path style="vector-effect: non-scaling-stroke;" stroke="null" id="path68" d="m2766.6,1321.66l-2635.198,0l0,487.94l2635.198,0l0,-487.94"/>
+  </clipPath>
+ </defs>
+ <g stroke="null">
+  <title stroke="null">background</title>
+  <rect stroke="null" x="-1" y="-1" width="268" height="172" id="canvas_background" fill="none"/>
+ </g>
+ <g stroke="null">
+  <title stroke="null">Layer 1</title>
+  <g id="svg_1">
+   <path stroke="null" id="path78" d="m260.605214,1.69327l-47.13732,114.861278c0,0 -11.028281,24.975245 -53.129919,24.975245l157.383851,0l-57.116615,-0.040793" fill-rule="nonzero" fill="#1e90ff"/>
+   <path style="vector-effect: non-scaling-stroke;" stroke="null" id="path80" d="m260.554663,15.693339l-42.925333,97.611732c0,0 -9.264,21.224533 -32.292,21.224533l75.217333,0l0,-118.836265" fill-rule="nonzero" fill="#5865aa"/>
+   <path stroke="null" id="path82" d="m2.969733,134.529604l0,28.571866l257.694264,0l0,-28.571866l-0.109333,0l0,-64.524266l-42.925333,52.999733c0,0 -9.264,11.524533 -32.292,11.524533l-182.367598,0" fill-rule="nonzero" fill="#192745"/>
+   <path style="vector-effect: non-scaling-stroke;" stroke="null" id="path312" d="m2.968799,163.286937l257.693331,0l0,-4.82708l-257.693331,0l0,4.82708z" fill-rule="nonzero" fill="#1e90ff"/>
+  </g>
+ </g>
+</svg>

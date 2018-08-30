@@ -86,6 +86,9 @@ body{
 .scroll-flag{
     width: 100%;
     height: 300vh;
+    display: flex;
+    align-items: flex-end;
+    // scroll-behavior: smooth;
 }
 
 .screen{
@@ -98,6 +101,17 @@ body{
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+    }
+    &_form{
+        z-index: 99999999;
+        width: 100%;
+        & .container{
+            height: 100%;
+            & .row{
+                height: 100%;
+                display: block;
+            }
+        }
     }
 }
 
@@ -253,6 +267,9 @@ body{
         bottom: 11px;
         & .round-number{
             position: absolute;
+            color: #fff;
+            background: #5876b8;
+            box-shadow: -3px 3px 6px rgba(0,0,0,0.16), -3px 3px 6px rgba(0,0,0,0.23);
         }
         &_1{
             left: 15px;
@@ -401,8 +418,9 @@ body{
         }
     }
     &__content{
-        border: 2px solid $blue_gradient;
-        background-color: #fff;
+        // border: 2px solid $blue_gradient;
+        background-color: $blue_gradient;
+        color: #fff;
         padding: 10px;
         display: flex;
         width: 100%;
@@ -410,6 +428,7 @@ body{
         justify-content: flex-start;
         z-index: 10000;
         box-shadow: -3px 3px 2px rgba(0, 0, 0, 0.24);
+        border-radius: 12px;
     }
 }
 
@@ -420,12 +439,80 @@ body{
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    background: #5876b8;
-    color: #fff;
+    background: #fff;
+    color: #5876b8;
     font-weight: 600;
     font-family: 'Mukta Vaani', sans-serif;
     font-size: 15px;
-    box-shadow: -3px 3px 6px rgba(0,0,0,0.16), -3px 3px 6px rgba(0,0,0,0.23);
     flex-shrink: 0;
     margin-right: 10px;
+}
+
+.footer-bg{
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    filter: drop-shadow(-3px -3px 6px rgba(0, 0, 0, 0.35));
+    z-index: -1;
+}
+
+.contact{
+    width: 100%;
+    height: 83vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content:flex-start;
+    padding-top: 14vh;
+}
+
+.footer-logo{
+    width: 200px;
+    height: auto;
+}
+
+.footer-info{
+    width: 50%;
+    margin-left: 194px;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: $footer_dark;
+    &__title{
+        font-size: 40px;
+        font-family: 'Mukta Vaani', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 4vh;
+    }
+    &__link{
+        display: inline-block;
+        margin-top: 5vh;
+        font-weight: 400;
+        color: $blue_gradient;
+        transition: 0.4s all;
+        &:hover{
+            color: $light_blue_gradient;
+        }
+    }
+}
+
+.copyright{
+    width: 100%;
+    height: 14.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #fff;
+    opacity: 0.6;
+    font-weight: 300;
+    font-size: 13px;
+    & p{
+        margin-bottom: 15px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
 }

@@ -43,8 +43,33 @@ $(document).ready(function(){
         }
 
         var currOpacity = (1 - (startPoint - (currPosition - scrollOffset)) / startPoint) * 1.3;
-        screenBtns.css('opacity', currOpacity);
-        $(tooltipsArr).css('opacity', currOpacity);
+        if (currPosition / viewportHeight <= 1.15){
+            screenBtns.css('opacity', currOpacity);
+            $(tooltipsArr).css('opacity', currOpacity);
+            screenshot.css('opacity', 1);
+        } else if (currPosition / viewportHeight > 1.3){
+            currOpacity = (1 + (viewportHeight - (currPosition - scrollOffset)) / scrollOffset) * 1.4;
+            screenBtns.css('opacity', currOpacity);
+            $(tooltipsArr).css('opacity', currOpacity);
+            screenshot.css('opacity', currOpacity);
+        }
+            // debugger;
+        if ((prevPosition < currPosition) && (currPosition / scrollEl.height() >= 0.62)){
+        //    window.scrollTo( 0, scrollEl.height());
+        //    scrollEl.scrollTop(scrollEl.height());
+            document.querySelector('#scrollFlag .scroll-flag').scrollIntoView({block: "end", behavior: "smooth"});
+        } else if ((prevPosition > currPosition) && (currPosition / scrollEl.height() <= 0.05)){
+            document.querySelector('#scrollFlag .scroll-flag').scrollIntoView({block: "start", behavior: "smooth"});
+            // var i = 10;
+            // var int = setInterval(function() {
+            //     document.querySelector('#scrollFlag .scroll-flag').scrollTo(0, i);
+            //     i += 10;
+            //     if (i >= 200) clearInterval(int);
+            // }, 20);
+            // scrollEl.animate({scrollTop: 0},'50');
+            // scrollEl.scrollTop (0);
+        }
+        console.log({currPosition: currPosition, scrollElHeight: scrollEl.height(), percent:  currPosition / scrollEl.height()});
         
         prevPosition = currPosition;
     });
