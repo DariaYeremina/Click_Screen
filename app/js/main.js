@@ -21,6 +21,8 @@ $(document).ready(function(){
     var screenshot = $('.screenshot');
     var screenshotLeft = -(viewportWidth * 0.20);
     var screenMoved = false;
+    var nextpage = $('#nextPage');
+    var prevPage = $('#prevPage');
 
     screenshot.css('margin-left', screenshotLeft + 'px');
 
@@ -53,26 +55,72 @@ $(document).ready(function(){
             $(tooltipsArr).css('opacity', currOpacity);
             screenshot.css('opacity', currOpacity);
         }
-            // debugger;
-        if ((prevPosition < currPosition) && (currPosition / scrollEl.height() >= 0.62)){
-        //    window.scrollTo( 0, scrollEl.height());
-        //    scrollEl.scrollTop(scrollEl.height());
-            document.querySelector('#scrollFlag .scroll-flag').scrollIntoView({block: "end", behavior: "smooth"});
-        } else if ((prevPosition > currPosition) && (currPosition / scrollEl.height() <= 0.05)){
-            document.querySelector('#scrollFlag .scroll-flag').scrollIntoView({block: "start", behavior: "smooth"});
-            // var i = 10;
-            // var int = setInterval(function() {
-            //     document.querySelector('#scrollFlag .scroll-flag').scrollTo(0, i);
-            //     i += 10;
-            //     if (i >= 200) clearInterval(int);
-            // }, 20);
-            // scrollEl.animate({scrollTop: 0},'50');
-            // scrollEl.scrollTop (0);
-        }
-        console.log({currPosition: currPosition, scrollElHeight: scrollEl.height(), percent:  currPosition / scrollEl.height()});
-        
-        prevPosition = currPosition;
     });
+
+    var currentPageNumber = 0;
+    var animationRunned = false;
+    var thirdPage = $('.screen_form');
+
+    function scrollNextPage() {
+        if (!animationRunned) {
+            animationRunned = true;
+            prevPage.css('display', 'inline-block');
+            if(currentPageNumber === 1){
+                thirdPage.animate({'margin-top': '-100vh'}, 900, 'swing');
+            }
+            currentPageNumber += 1;
+            scrollFlag.css('overflow-y', 'scroll');
+            scrollFlag.animate({scrollTop: viewportHeight * currentPageNumber}, 990, 'swing', function() {
+                animationRunned = false;
+                scrollFlag.css('overflow-y', 'hidden');
+                if(currentPageNumber === 2){
+                    nextpage.css('display', 'none');
+                }
+            });
+        }
+    };
+
+    function scrollPrevPage() {
+        if (!animationRunned) {
+            animationRunned = true;
+            nextpage.css('display', 'inline-block');
+            if(currentPageNumber === 2){
+                thirdPage.animate({'margin-top': '100vh'}, 900, 'swing');
+            }
+            currentPageNumber -= 1;
+            scrollFlag.css('overflow-y', 'scroll');
+            scrollFlag.animate({scrollTop: viewportHeight * currentPageNumber}, 990, 'swing', function() {
+                animationRunned = false;
+                scrollFlag.css('overflow-y', 'hidden');
+                if(currentPageNumber === 0){
+                    prevPage.css('display', 'none');
+                }
+            });
+        }
+    };
+
+    nextpage.click(function() {
+        scrollNextPage();
+    });
+
+    prevPage.click(function() {
+        scrollPrevPage();
+    });
+
+    // scrollFlag.on('wheel', function(e) {
+    //     scrollNextPage();
+    //     console.log(e);
+    // });
+
+    scrollFlag.on('mousewheel', function(event) {
+        // console.log(event.deltaX, event.deltaY, event.deltaFactor);
+        if (event.deltaY > 0){
+            scrollPrevPage();
+        } else if (event.deltaY < 0){
+            scrollNextPage();
+        }
+    });
+
 
 
     //tooltips height
