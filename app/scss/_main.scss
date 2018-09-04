@@ -88,7 +88,6 @@ body{
     height: 300vh;
     display: flex;
     align-items: flex-end;
-    // scroll-behavior: smooth;
 }
 
 .screen{
@@ -96,7 +95,6 @@ body{
     height: 100vh;
     &_tooltips{
         display: flex;
-        // display: none;
         width: 100%;
         flex-direction: column;
         align-items: center;
@@ -220,16 +218,19 @@ body{
     align-items: center;
     justify-content: flex-start;
     letter-spacing: 1px;
-    padding: 18px 55px 18px 94px;
+    padding: 9px 55px 9px 94px;
     color: #fff;
     background-color: $button_blue;
     border-radius: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
     font-size: 25px;
     font-family: 'Mukta Vaani', sans-serif;
     text-decoration: none;
     text-transform: uppercase;
     position: absolute;
-    bottom: 17%;
+    bottom: 20%;
     right: 46%;
     box-shadow: -3px 3px 6px rgba(0,0,0,0.16), -3px 3px 6px rgba(0,0,0,0.23);
     z-index: 20;
@@ -268,8 +269,9 @@ body{
         & .round-number{
             position: absolute;
             color: #fff;
-            background: #5876b8;
+            background: $tooltips;
             box-shadow: -3px 3px 6px rgba(0,0,0,0.16), -3px 3px 6px rgba(0,0,0,0.23);
+            margin-top: 0;
         }
         &_1{
             left: 15px;
@@ -364,7 +366,7 @@ body{
         top: 95%;
         right: 50%;
         width: 1px;
-        border-right: 2px solid $blue_gradient;
+        border-right: 2px solid $tooltips;
         z-index: -1;
         transform-origin: 50% 0;
     }
@@ -419,9 +421,9 @@ body{
     }
     &__content{
         // border: 2px solid $blue_gradient;
-        background-color: $blue_gradient;
+        background-color: $tooltips;
         color: #fff;
-        padding: 10px;
+        padding: 10px 10px 10px 12px;
         display: flex;
         width: 100%;
         align-items: flex-start;
@@ -434,6 +436,7 @@ body{
         font-size: 18px;
         line-height: 1.4;
         font-weight: 300;
+        margin-top: -2px;
     }
 }
 
@@ -445,12 +448,13 @@ body{
     height: 26px;
     border-radius: 50%;
     background: #fff;
-    color: #5876b8;
+    color: $tooltips;
     font-weight: 600;
     font-family: 'Mukta Vaani', sans-serif;
     font-size: 15px;
     flex-shrink: 0;
     margin-right: 10px;
+    margin-top: 2px;
 }
 
 .footer-bg{
@@ -473,22 +477,25 @@ body{
 }
 
 .footer-logo{
-    width: 200px;
+    width: 150px;
     height: auto;
     margin-top: 88px;
 }
 
 .footer-info{
-    width: 50%;
-    margin-left: 194px;
+    width: 60%;
+    margin-right: 146px;
     font-size: 30px;
     font-weight: 300;
     line-height: 1.4;
     color: $footer_dark;
-    & > div span{
-        display: block;
-        &.footer-info__mb{
-            margin-bottom: 15px;
+    text-align: right;
+    & > div{
+        & span{
+            display: block;
+            &.footer-info__mb{
+                margin-bottom: 15px;
+            }
         }
     }
     &__title{
@@ -502,8 +509,10 @@ body{
         display: inline-block;
         margin-top: 5vh;
         font-weight: 400;
+        font-size: 26px;
         color: $blue_gradient;
         transition: 0.4s all;
+        z-index: 99999999;
         &:hover{
             color: $light_blue_gradient;
         }
@@ -512,10 +521,14 @@ body{
 
 .copyright{
     width: 100%;
+    position: absolute;
+    padding-right: 5%;
+    right: 0;
     height: 14.5vh;
+    margin-top: 1vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: center;
     color: #fff;
     opacity: 0.6;
@@ -532,7 +545,66 @@ body{
 .pagination{
     z-index: 9999999999999;
     position: fixed;
-    right: 10%;
-    bottom: 20px;
+    left: 50%;
+    margin-left: -44px;
+    bottom: 35px;
     display: inline-block;
+    text-align: center;
+    color: $footer_dark;
+    font-weight: 300;
+    &__text{
+        display: block;
+        opacity: 0;
+        transition: 0.4s all;
+    }
+    &:hover{
+        & .pagination__text{
+            opacity: 1;
+        }
+    }
+    &__icon{
+        cursor: pointer;
+    }
+}
+
+.scrollbar{
+    position: fixed;
+    right: 24px;
+    top: 50%;
+    margin-top: -64px;
+    z-index: 10;
+    &__el{
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        display: block;
+        margin-bottom: 40px;
+        background-color: transparent;
+        color: $footer_viol;
+        text-align: center;
+        // line-height: 12px;
+        &:before{
+            content: '\2022';
+            display: inline-block;
+            font-size: 15px;
+            line-height: 9px;
+        }
+        &:last-of-type{
+            margin-bottom: 0;
+        }
+        &_active{
+            border: 2px solid $footer_viol;
+            &:before{
+                display: none;
+            }
+        }
+        &_white{
+            &::before{
+                color: #fff;
+            }
+            &.scrollbar__el_active{
+                border-color: #fff;
+            }
+        }
+    }
 }

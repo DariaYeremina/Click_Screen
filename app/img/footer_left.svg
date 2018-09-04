@@ -1,0 +1,33 @@
+<svg width="252" height="160" xmlns="http://www.w3.org/2000/svg">
+ <metadata id="metadata8">image/svg+xml</metadata>
+ <defs>
+  <clipPath id="clipPath22" clipPathUnits="userSpaceOnUse">
+   <path stroke="null" id="path20" d="m131.402,3009.46l2635.2,0l0,121.543l-2635.2,0l0,-121.543z"/>
+  </clipPath>
+  <clipPath id="clipPath34" clipPathUnits="userSpaceOnUse">
+   <path stroke="null" id="path32" d="m131.402,1321.66l0,0l0,1687.8l2635.198,0l0,-1199.86l-2635.198,0l0,-487.94"/>
+  </clipPath>
+  <clipPath id="clipPath46" clipPathUnits="userSpaceOnUse">
+   <path stroke="null" id="path44" d="m1934.1,892.5l-2635.198,0l0,129.461l2635.198,0l0,-129.461"/>
+  </clipPath>
+  <clipPath id="clipPath58" clipPathUnits="userSpaceOnUse">
+   <path stroke="null" id="path56" d="m2766.6,129.461l-2635.198,0l0,1192.199l2635.198,0l0,487.94l0,-1680.139"/>
+  </clipPath>
+  <clipPath id="clipPath70" clipPathUnits="userSpaceOnUse">
+   <path stroke="null" id="path68" d="m2766.6,1321.66l-2635.198,0l0,487.94l2635.198,0l0,-487.94"/>
+  </clipPath>
+ </defs>
+ <g stroke="null">
+  <title>background</title>
+  <rect stroke="null" x="-1" y="-1" width="254" height="162" id="canvas_background" fill="none"/>
+ </g>
+ <g stroke="null">
+  <title>Layer 1</title>
+  <g stroke="null" id="svg_1">
+   <path stroke="null" id="path78" d="m-1.346086,0.69327l47.810341,114.86128c0,0 11.18574,24.97524 53.888492,24.97524l-159.630957,0l57.932124,-0.04079" fill-rule="nonzero" fill="#39b2e6"/>
+   <path stroke="null" id="path80" d="m-1.294814,14.69334l43.538213,97.61173c0,0 9.39627,21.22453 32.753061,21.22453l-76.291274,0l0,-118.83626" fill-rule="nonzero" fill="#4b84c6"/>
+   <path stroke="null" id="path82" d="m259.967882,133.5296l0,28.57187l-261.373597,0l0,-28.57187l0.110901,0l0,-64.52426l43.538213,52.99973c0,0 9.39627,11.52453 32.753061,11.52453l184.971422,0" fill-rule="nonzero" fill="#2d477d"/>
+   <path stroke="null" id="path312" d="m259.968825,162.28694l-261.372644,0l0,-4.82708l261.372644,0l0,4.82708z" fill-rule="nonzero" fill="#39b2e6"/>
+  </g>
+ </g>
+</svg>

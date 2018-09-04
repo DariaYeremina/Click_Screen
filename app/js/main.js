@@ -1,8 +1,4 @@
 $(document).ready(function(){
-    // var buttonWrapHeight = document.querySelector('.js-screen').clientHeight - (document.querySelector('.js-screen').clientHeight * 0.16) - document.querySelector('.header').offsetHeight - document.querySelector('.app-screen').offsetHeight;
-    // if (buttonWrapHeight >= document.querySelector('.button').clientHeight){
-    //     document.querySelector('.button__wrap').style.height = buttonWrapHeight + 'px';
-    // }
 
     var viewportHeight = $(window).height();
     var viewportWidth = $(window).width();
@@ -60,60 +56,70 @@ $(document).ready(function(){
     var currentPageNumber = 0;
     var animationRunned = false;
     var thirdPage = $('.screen_form');
+    var scrollBarEls = document.querySelectorAll('.scrollbar__el');
+
+    function checkIndicator(page) {
+        if(page >= 0 && page < scrollBarEls.length) {
+            for (var i = 0; i < scrollBarEls.length; i++) {
+                scrollBarEls[i].classList.remove('scrollbar__el_active');
+            }
+            scrollBarEls[page].classList.add('scrollbar__el_active');
+            $('.pagination').css('display', page > 0 ? 'none' : 'block' );
+        }
+    };
+
+    function scrolbarColor(page) {
+        if (page <= 0){
+            $('.scrollbar__el').addClass('scrollbar__el_white');
+        } else{
+            $('.scrollbar__el').removeClass('scrollbar__el_white');
+        } 
+    };
 
     function scrollNextPage() {
         if (!animationRunned) {
             animationRunned = true;
-            prevPage.css('display', 'inline-block');
-            if(currentPageNumber === 1){
-                thirdPage.animate({'margin-top': '-100vh'}, 900, 'swing');
-            }
+            // if(currentPageNumber === 1){
+            //     thirdPage.animate({'margin-top': '-100vh'}, 900, 'swing');
+            // }
             currentPageNumber += 1;
-            scrollFlag.css('overflow-y', 'scroll');
+            checkIndicator(currentPageNumber);
             scrollFlag.animate({scrollTop: viewportHeight * currentPageNumber}, 990, 'swing', function() {
                 animationRunned = false;
-                scrollFlag.css('overflow-y', 'hidden');
-                if(currentPageNumber === 2){
-                    nextpage.css('display', 'none');
-                }
-            });
+                scrolbarColor(currentPageNumber);
+            });        
         }
     };
 
     function scrollPrevPage() {
         if (!animationRunned) {
             animationRunned = true;
-            nextpage.css('display', 'inline-block');
-            if(currentPageNumber === 2){
-                thirdPage.animate({'margin-top': '100vh'}, 900, 'swing');
-            }
+            // if(currentPageNumber === 2){
+            //     thirdPage.animate({'margin-top': '100vh'}, 900, 'swing');
+            // }
             currentPageNumber -= 1;
-            scrollFlag.css('overflow-y', 'scroll');
+            checkIndicator(currentPageNumber);
             scrollFlag.animate({scrollTop: viewportHeight * currentPageNumber}, 990, 'swing', function() {
                 animationRunned = false;
-                scrollFlag.css('overflow-y', 'hidden');
-                if(currentPageNumber === 0){
-                    prevPage.css('display', 'none');
-                }
-            });
+                scrolbarColor(currentPageNumber); 
+            }); 
         }
     };
 
-    nextpage.click(function() {
+    $('.pagination__icon').click(function() {
         scrollNextPage();
     });
 
-    prevPage.click(function() {
-        scrollPrevPage();
-    });
-
-    // scrollFlag.on('wheel', function(e) {
+    // nextpage.click(function() {
     //     scrollNextPage();
-    //     console.log(e);
+    // });
+
+    // prevPage.click(function() {
+    //     scrollPrevPage();
     // });
 
     scrollFlag.on('mousewheel', function(event) {
-        // console.log(event.deltaX, event.deltaY, event.deltaFactor);
+        // console.log(event.deltaY);
         if (event.deltaY > 0){
             scrollPrevPage();
         } else if (event.deltaY < 0){
